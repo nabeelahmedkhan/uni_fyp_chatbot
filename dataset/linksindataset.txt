@@ -1,0 +1,5 @@
+'admission@smiu.edu.pk','www.smiu.edu.pk','http://www.smiu.edu.pk/admissions.php','http://cs.smiu.edu.pk/bscs_program.php','http://business.smiu.edu.pk/bba-program.php','http://media.smiu.edu.pk/bs-media-studies-new.php',
+'http://edu.smiu.edu.pk/bs-education.php','http://env.smiu.edu.pk/bs-environmental-sciences.php','http://business.smiu.edu.pk/accounting-finance.php','http://business.smiu.edu.pk/mba-program.php','http://business.smiu.edu.pk/ms-management.php','http://business.smiu.edu.pk/public-administration.php',
+'http://cs.smiu.edu.pk/mscs_program.php','http://cs.smiu.edu.pk/PhD_program.php','http://edu.smiu.edu.pk/ms-education.php','http://env.smiu.edu.pk/ms-environmental-sciences.php','http://media.smiu.edu.pk/ms-media-studies-new.php','http://media.smiu.edu.pk/ms-social-sciences.php',
+'+92 21 99217501-3','http://lms.smiu.edu.pk:8012/','http://smiu.fm/ FM 96.6','https://www.youtube.com/channel/UCFgimy2ABAwoT723zpBhMcA','info@smiu.edu.pk','http://www.smiu.edu.pk/academic-policies.php','http://www.smiu.edu.pk/admissions-criteria.php','http://www.smiu.edu.pk/images/Admissions-Examinations-Policy.pdf',
+'http://business.smiu.edu.pk/bba2-program.php'

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<title>SMIU ChatBot</title>
+
+<head>
+  <link rel="shortcut icon" type="image/x-icon" href="../static/smiu.png" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap-min.css') }}" >
+
+  <style>    
+    body {
+      margin: 0;
+      background-color: #0078FF;
+    }
+    .centerClass {
+      text-align: center;
+    }
+
+    h1 {
+      text-align: center;
+    }
+    /* #chatbox { */
+      /* margin: 0 auto; */
+    /* } */
+
+    .image {
+      padding-top: 20px;
+      /* margin-top: 20px; */
+      text-align: center;
+      height: 250px;
+      width: 250px;
+    }
+    .box {
+      height: 100%;
+      overflow-y: scroll;
+      border: 1px solid #0078FF;
+      max-height: 400px;
+    }
+    #chatbox {
+      background: white;
+      text-align: center;
+    }
+    #userInput {
+      /* padding-bottom: 20px; */
+      text-align: center;
+      background-color: white;
+    }
+    #textInput {
+      font-size: 20px;
+      text-align: left;
+      padding-left: 20px;
+      border-radius: 10px;
+      height: 30px;
+      /* text-align: center; */
+      margin: 0 auto;
+      width: 80%;
+    }
+    .botTextMain {
+      margin: 0 auto;
+      text-align: center;
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+    .botTextMain span {
+      border-radius: 10px;
+      padding: 5px;
+      text-align: center;
+      color: white;
+      padding-left: 20px;
+      /* margin-left: 320px; */
+      background: #0078FF;
+    }
+    .botText {
+      text-align: left;
+      width: 50%;
+      background: white;
+      margin-left: 20px;
+      margin-top: 5px;
+      margin-bottom: 15px;
+      padding: 10px;
+      background: #0078FF;
+      border-radius: 10px;
+
+    }
+    .botText span {
+      line-height: 10px;
+      text-align: left;
+      color: white;
+    }
+    .userText {
+      /* width: 50%; */
+      /* float: right; */
+      margin: 0 auto;
+      text-align: right;
+      background: white;
+      width: 50%;
+      margin-right: 20px;
+      margin-top: 5px;
+      margin-bottom: 5px;
+
+    }
+    .userText span {
+      padding: 10px;
+      background: #0078FF;
+      border-radius: 10px;
+      text-align: right;
+      color: white;
+      /* margin-right: 320px; */
+    }
+  </style>
+</head>
+
+<body>
+    <h1 class="text-center">Example 6 - Background Image with hidden text</h1>
+
+
+    <nav class="navbar navbar-inverse navbar-static-top example6">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar6">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand text-hide" href="http://disputebills.com">Brand Text
+          </a>
+        </div>
+        <div id="navbar6" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li class="divider"></li>
+                <li class="dropdown-header">Nav header</li>
+                <li><a href="#">Separated link</a></li>
+                <li><a href="#">One more separated link</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <!--/.nav-collapse -->
+      </div>
+      <!--/.container-fluid -->
+    </nav>
+  
+  <div class="">
+    <img src="/static/images.jpg" alt="Smiley face" style="height: 100px;width:100px;">
+  </div>
+  <h1>
+    Smiu Admission Chatbot
+  </h1>
+  <div class="box">
+    <div id="chatbox">
+      <img src="/static/chatbot.png" alt="SMIU ChatBot" class="image" />
+      <p class="botTextMain">
+          <span>Hi! I'm SMIU admission ChatBot ❤️</span>
+        </p>
+      <!-- <p class="botText"> -->
+        <!-- <span></span> -->
+      <!-- </p> -->
+    </div>
+    <div id="userInput">
+      <input id="textInput" type="text" name="msg" placeholder="Message" />
+    </div>
+  </div>
+  <div class="box"></div>
+  <script>
+    function getBotResponse() {
+      var rawText = $("#textInput").val();
+      var userHtml = '<p class="userText"><span>' + rawText + "</span></p>";
+      $("#textInput").val("");
+      $("#chatbox").append(userHtml);
+      document
+        .getElementById("userInput")
+        .scrollIntoView({ block: "start", behavior: "smooth" });
+      $.get("/get", { msg: rawText }).done(function (data) {
+        var botHtml = '<p class="botText"><span>' + data + "</span></p>";
+        $("#chatbox").append(botHtml);
+        document
+          .getElementById("userInput")
+          .scrollIntoView({ block: "start", behavior: "smooth" });
+      });
+    }
+    $("#textInput").keypress(function (e) {
+      if (e.which == 13) {
+        getBotResponse();
+      }
+    });
+  </script>
+</body>
+
+</html>
