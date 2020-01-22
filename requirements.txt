@@ -1,7 +1,7 @@
 h5py
 scikit-learn
 nltk
-python==2.6
+python==3.6
 numpy
 pandas
 matplotlib
